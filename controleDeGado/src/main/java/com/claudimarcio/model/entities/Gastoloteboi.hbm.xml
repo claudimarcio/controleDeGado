@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/01/2015 21:06:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Gastoloteboi" table="gastoloteboi" catalog="controledegado" optimistic-lock="version">
+        <composite-id name="id" class="pojo.GastoloteboiId">
+            <key-property name="gbLbCodigo" type="int">
+                <column name="gb_lb_codigo" />
+            </key-property>
+            <key-property name="gbGastoCodigo" type="int">
+                <column name="gb_gasto_codigo" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="gasto" class="pojo.Gasto" update="false" insert="false" fetch="select">
+            <column name="gb_gasto_codigo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="loteboi" class="pojo.Loteboi" update="false" insert="false" fetch="select">
+            <column name="gb_lb_codigo" not-null="true" />
+        </many-to-one>
+        <property name="gbQteProduto" type="int">
+            <column name="gb_qte_produto" not-null="true" />
+        </property>
+        <property name="gbValorProduto" type="big_decimal">
+            <column name="gb_valor_produto" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

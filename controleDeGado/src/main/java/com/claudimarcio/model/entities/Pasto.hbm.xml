@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/01/2015 21:06:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Pasto" table="pasto" catalog="controledegado" optimistic-lock="version">
+        <id name="pastoCodigo" type="java.lang.Integer">
+            <column name="pasto_codigo" />
+            <generator class="identity" />
+        </id>
+        <property name="pastoDono" type="string">
+            <column name="pasto_dono" length="35" not-null="true" />
+        </property>
+        <property name="valorPorCabeca" type="big_decimal">
+            <column name="valor_por_cabeca" precision="10" not-null="true" />
+        </property>
+        <property name="pastoAluguel" type="big_decimal">
+            <column name="pasto_aluguel" precision="10" not-null="true" />
+        </property>
+        <property name="pastoTempoLocacao" type="string">
+            <column name="pasto_tempo_locacao" length="40" not-null="true" />
+        </property>
+        <property name="pastoDatainicioLocacao" type="date">
+            <column name="pasto_datainicio_locacao" length="10" />
+        </property>
+        <property name="pastoDatafinalLocacao" type="date">
+            <column name="pasto_datafinal_locacao" length="10" />
+        </property>
+        <set name="lotebois" table="loteboi" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lb_pasto_codigo" />
+            </key>
+            <one-to-many class="pojo.Loteboi" />
+        </set>
+    </class>
+</hibernate-mapping>

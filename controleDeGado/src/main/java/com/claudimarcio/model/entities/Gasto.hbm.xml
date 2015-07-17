@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/01/2015 21:06:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Gasto" table="gasto" catalog="controledegado" optimistic-lock="version">
+        <id name="gastoCodigo" type="java.lang.Integer">
+            <column name="gasto_codigo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="produto" class="pojo.Produto" fetch="select">
+            <column name="gasto_prod_codigo" />
+        </many-to-one>
+        <property name="gastoData" type="date">
+            <column name="gasto_data" length="10" />
+        </property>
+        <property name="gastoValor" type="big_decimal">
+            <column name="gasto_valor" precision="10" not-null="true" />
+        </property>
+        <property name="gastoQteComprada" type="java.lang.Integer">
+            <column name="gasto_qte_comprada" />
+        </property>
+        <set name="gastolotebois" table="gastoloteboi" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="gb_gasto_codigo" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Gastoloteboi" />
+        </set>
+    </class>
+</hibernate-mapping>

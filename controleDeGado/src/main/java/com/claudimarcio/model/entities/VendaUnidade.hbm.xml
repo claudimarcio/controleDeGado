@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/01/2015 21:06:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.VendaUnidade" table="venda_unidade" catalog="controledegado" optimistic-lock="version">
+        <id name="vendaUnidadeId" type="java.lang.Integer">
+            <column name="venda_unidadeId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="loteboi" class="pojo.Loteboi" fetch="select">
+            <column name="venda_unidade_lote_prove" not-null="true" />
+        </many-to-one>
+        <property name="vendaUnidadeQuantidade" type="int">
+            <column name="venda_unidadeQuantidade" not-null="true" />
+        </property>
+        <property name="vendaUnidadeComprador" type="string">
+            <column name="venda_unidade_comprador" length="45" />
+        </property>
+        <property name="vendaUnidadeData" type="date">
+            <column name="venda_unidade_data" length="10" />
+        </property>
+        <property name="vendaUnidadeTipoPagamento" type="string">
+            <column name="venda_unidade_tipoPagamento" length="45" />
+        </property>
+        <property name="vedaLucroObtido" type="java.lang.Double">
+            <column name="veda_lucro_obtido" precision="22" scale="0" />
+        </property>
+        <property name="vendaUnidadeValorVenda" type="java.lang.Double">
+            <column name="venda_unidade_valorVenda" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
