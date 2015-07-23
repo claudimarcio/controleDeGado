@@ -9,7 +9,6 @@
     <property name="hibernate.connection.password">root</property>
     <property name="hibernate.current_session_context_class">thread</property>
     
-    
      <!-- HABILITA A EXIBIÇÃO DO SQL GERADO PELO HIBERNATE E FORMATA-O -->
         
         <property name="hibernate.show_sql">true</property>
@@ -27,17 +26,6 @@
         <property name="c3p0.max_statements">80</property>
         <property name="c3p0.idle_test_period">300</property>
     
-    
-    
-    <mapping resource="com.claudimarcio.model.entities/Gasto.hbm.xml"/>
-    <mapping resource="com.claudimarcio.model.entities/Venda.hbm.xml"/>
-    <mapping resource="com.claudimarcio.model.entities/Gastoloteboi.hbm.xml"/>
-    <mapping resource="com.claudimarcio.model.entities/Login.hbm.xml"/>
-    <mapping resource="com.claudimarcio.model.entities/Loteboi.hbm.xml"/>
-    <mapping resource="com.claudimarcio.model.entities/Produto.hbm.xml"/>
-    <mapping resource="com.claudimarcio.model.entities/Pasto.hbm.xml"/>
-    
-     
     
   </session-factory>
 </hibernate-configuration>
