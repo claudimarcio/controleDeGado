@@ -7,20 +7,15 @@
     <display-name> ControleDeGado </display-name>
     <welcome-file-list> 
         <welcome-file> index.jsp </welcome-file>
-        <!--<welcome-file> index.html </welcome-file>-->
-        <!--<welcome-file> index.htm </welcome-file>-->
+        <welcome-file> index.html </welcome-file>
+        <welcome-file> index.htm </welcome-file>
     </welcome-file-list>
     <!-- configurando tempo de duração de uma seção-->
     <session-config>
         <session-timeout>30</session-timeout>
         
     </session-config>
-    <!-- Configurações do tema do PrimeFaces -->
-    <dependency>  
-        <groupId>org.primefaces</groupId>  
-        <artifactId>primefaces</artifactId>  
-        <version>5.2</version>  
-    </dependency>
+  
     <context-param>  
         <param-name>primefaces.THEME</param-name>  
         <param-value>sam</param-value>  
