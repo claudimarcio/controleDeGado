@@ -1,6 +1,5 @@
 package com.claudimarcio.util;
 
-import com.claudimarcio.model.dao.FacesContextUtil;
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;

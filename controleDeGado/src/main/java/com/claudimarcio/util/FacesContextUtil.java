@@ -1,4 +1,4 @@
-package com.claudimarcio.model.dao;
+package com.claudimarcio.util;
 
 import javax.faces.context.FacesContext;
 import org.hibernate.Session;
